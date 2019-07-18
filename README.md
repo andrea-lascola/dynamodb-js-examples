@@ -1,4 +1,6 @@
-# DynamoDB js examples Use Cases:
+# DynamoDB js
+
+# Examples Use Cases
 
 - [Query](#Query)
     - [Get Items using **begins_with** on Sort Key](#Get-Items-using-begins_with-on-Sort-Key)
