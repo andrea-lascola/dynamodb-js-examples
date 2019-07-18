@@ -1,4 +1,4 @@
-# DynamoDB js
+# DynamoDB cheatsheet
 
 # Examples Use Cases
 
