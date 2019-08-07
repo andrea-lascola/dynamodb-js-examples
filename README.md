@@ -43,6 +43,38 @@ return await db.query(params).promise();
   ScannedCount: 2 }
 ```
 
+#### _Get Items checking value in array using **contains**_
+
+##### Data Model
+
+| pk | sk     | category|
+|----|--------|----------|
+| 0  | 4#10#7 | [{ "S" : "Tuna" },    { "S" : "Pizza" },    { "S" : "Ball" }]     |
+| 0  | 5#2#1  | [{ "S" : "Mouse" },    { "S" : "Hat" }]        |
+| 0  | 1#1#0  | [{ "S" : "Hat" },    { "S" : "Cheese" }]        |
+
+```typescript
+// Query
+const params = {
+    TableName: "test-t",
+    KeyConditionExpression: "pk = :pk",
+    FilterExpression: "contains(category, :cat1) or contains(category, :cat2)",
+    ExpressionAttributeValues: {
+        ":pk" : "0",
+        ":cat1": "Mouse",
+        ":cat2": "Ball",
+    }
+    };
+return await db.query(params).promise();
+
+// Output
+{ Items:
+   [ { category: [Array], pk: '0', sk: '4#10#7' },
+     { category: [Array], pk: '0', sk: '5#2#1' }],
+  Count: 2,
+  ScannedCount: 3 }
+```
+
 ## Put
 
 #### _Create or Update an Item_
