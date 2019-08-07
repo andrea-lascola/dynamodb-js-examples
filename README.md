@@ -65,7 +65,7 @@ const params = {
         ":cat1": "Mouse",
         ":cat2": "Ball",
     }
-    };
+};
 return await db.query(params).promise();
 
 // Output
