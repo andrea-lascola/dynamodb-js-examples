@@ -4,6 +4,7 @@
 
 - [Query](#Query)
     - [Get Items using **begins_with** on Sort Key](#Get-Items-using-begins_with-on-Sort-Key)
+    - [Get Items checking value in array using **contains**](#Get-Items-checking-value-in-array-using-contains**_)
 - [Put](#Put)
     - [Create or Update an Item](#Create-or-Update-an-Item)
 - [BatchWriteItem](#BatchWriteItem)
