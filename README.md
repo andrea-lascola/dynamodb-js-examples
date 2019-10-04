@@ -112,6 +112,11 @@ await this.db.put(params).promise();
 
 #### _Delete a list of items_
 
+#### Limitations
+* up to 16 MB of data
+* 25 put or delete requests
+* items to be written can be as large as 400 KB
+
 ##### Data Model
 
 | pk | sk     | order    | jsonObj |
